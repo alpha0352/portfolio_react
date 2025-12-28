@@ -11,7 +11,7 @@ export const Home = () => {
                         hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
                             View My Projects
                         </a>
-                        <a href="#contactme" className="border text-white py-3 px-6 rounded-full font-medium transition relative overflow-hidden 
+                        <a href="#contact" className="border text-white py-3 px-6 rounded-full font-medium transition relative overflow-hidden 
                         hover:bg-linear-to-r to-purple-500 from-violet-600 hover:border-none hover:-translate-y-0.5 
                         hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
                             Contact Me
