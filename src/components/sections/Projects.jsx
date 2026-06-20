@@ -49,7 +49,7 @@ export const Projects = () => {
                                 ))}
                             </div>
                             <div className="flex justify-between items-center">
-                            <a className="text-indigo-700 text-sm mt-3 animate-bounce" href="#project1"> View Project ➔</a>
+                            <a className="text-indigo-700 text-sm mt-3 animate-bounce" href="https://github.com/alpha0352/SE-Project"> View Project ➔</a>
                             </div>
                         </div>
                         <div className="p-4 rounded-xl border border-white/10 hover:translate-y-1 transition-all">
