@@ -1,5 +1,8 @@
 name: MainPortfolio_CDPipeline
 
+env:
+  IMAGE_NAME: devanas001/main_portfolio_cicd:latest
+  
 on:
   workflow_run:
     workflows: ["MainPortfolio_CIPipeline"]
@@ -15,7 +18,7 @@ jobs:
     steps:
 
       - name: Pull latest image
-        run: sudo docker pull devanas001/main_portfolio_cicd:latest
+        run: sudo docker pull $IMAGE_NAME
 
       - name: Remove old container
         run: sudo docker rm -f idevanas-main-portfolio || true
@@ -26,4 +29,4 @@ jobs:
             --name idevanas-main-portfolio \
             --restart unless-stopped \
             -p 8080:80 \
-            alpha0352/main_portfolio_cicd:latest
+            $IMAGE_NAME
