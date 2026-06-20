@@ -1,0 +1,29 @@
+name: MainPortfolio_CDPipeline
+
+on:
+  workflow_run:
+    workflows: ["MainPortfolio_CIPipeline"]
+    types:
+      - completed
+
+jobs:
+
+  deploy:
+
+    runs-on: self-hosted
+
+    steps:
+
+      - name: Pull latest image
+        run: docker pull devanas001/main_portfolio_cicd:latest
+
+      - name: Remove old container
+        run: docker rm -f idevanas-main-portfolio || true
+
+      - name: Start portfolio container
+        run: |
+          docker run -d \
+            --name idevanas-main-portfolio \
+            --restart unless-stopped \
+            -p 8080:80 \
+            alpha0352/main_portfolio_cicd:latest
