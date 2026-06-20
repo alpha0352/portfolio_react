@@ -15,14 +15,14 @@ jobs:
     steps:
 
       - name: Pull latest image
-        run: docker pull devanas001/main_portfolio_cicd:latest
+        run: sudo docker pull devanas001/main_portfolio_cicd:latest
 
       - name: Remove old container
-        run: docker rm -f idevanas-main-portfolio || true
+        run: sudo docker rm -f idevanas-main-portfolio || true
 
       - name: Start portfolio container
         run: |
-          docker run -d \
+         sudo docker run -d \
             --name idevanas-main-portfolio \
             --restart unless-stopped \
             -p 8080:80 \
